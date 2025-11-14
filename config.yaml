@@ -110,13 +110,13 @@ networks:
         address:
           - 0x1231DEB6f5749EF6cE6943a275A1D3E7486F4EaE
           - 0x7E1DDe93e73B7177e95a9eCd9268356560F46dc2
-  # - id: 80084 # berachain
-  #   start_block: 0
-  #   contracts:
-  #     - name: LiFiDiamond
-  #       address:
-  #         - 0xf909c4Ae16622898b885B89d7F839E0244851c66
-  #         - 0x6852Dca9eb64f64e556d725Da7CCC2C371239728
+  - id: 80094 # berachain
+    start_block: 0
+    contracts:
+      - name: LiFiDiamond
+        address:
+          - 0xf909c4Ae16622898b885B89d7F839E0244851c66
+          - 0x6852Dca9eb64f64e556d725Da7CCC2C371239728
   - id: 1868 # soneium
     start_block: 0
     contracts:
@@ -138,19 +138,19 @@ networks:
         address:
           - 0x0a0758d937d1059c356D4714e57F5df0239bce1A
           - 0x97306A75E022e892eEe184440678d34c831dd1CD
-# - id: 1088 # katana
-#   start_block: 0
-#   contracts:
-#   - name: LiFiDiamond
-#     address:
-#     - 0xC59fe32C9549e3E8B5dCcdAbC45BD287Bd5bA2bc
-#     - 0x5faB4C8B01325d85424D31C167B2c9829F92Ba8f
-# - id: 98864 # plume
-#   start_block: 0
-#   contracts:
-#   - name: LiFiDiamond
-#     address:
-#     - 0x6f5C8Bb0C5Fe4ECeAC40EE1C238EaB6bbb29761c
-#     - 0x6EC18Cc9A67c37A792a5BdA8530A7824e6ab80e9
+  # - id: 1088 # katana - requires rpc as a source, leaving commented out for now
+  #   start_block: 0
+  #   contracts:
+  #   - name: LiFiDiamond
+  #     address:
+  #     - 0xC59fe32C9549e3E8B5dCcdAbC45BD287Bd5bA2bc
+  #     - 0x5faB4C8B01325d85424D31C167B2c9829F92Ba8f
+  - id: 98866 # plume
+    start_block: 0
+    contracts:
+      - name: LiFiDiamond
+        address:
+          - 0x6f5C8Bb0C5Fe4ECeAC40EE1C238EaB6bbb29761c
+          - 0x6EC18Cc9A67c37A792a5BdA8530A7824e6ab80e9
 unordered_multichain_mode: true
 preload_handlers: true
