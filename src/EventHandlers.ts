@@ -21,6 +21,15 @@ LiFiDiamond.BridgeToNonEVMChain.handler(async ({ event, context }) => {
   };
 
   context.LiFiDiamond_BridgeToNonEVMChain.set(entity);
+
+  let currentEventCount = (await context.NetworkData.get(event.chainId.toString()))?.totalEvents || 0;
+
+  const networkData = await context.NetworkData.get(event.chainId.toString());
+
+  context.NetworkData.set({
+    id: event.chainId.toString(),
+    totalEvents: BigInt(currentEventCount),
+  });
 });
 
 LiFiDiamond.BridgeToNonEVMChainBytes32.handler(async ({ event, context }) => {
@@ -95,34 +104,34 @@ LiFiDiamond.LiFiTransferStarted.handler(async ({ event, context }) => {
   const entity: LiFiDiamond_LiFiTransferStarted = {
     id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
     bridgeData_0: event.params.bridgeData
-        [0]
+    [0]
     ,
     bridgeData_1: event.params.bridgeData
-        [1]
+    [1]
     ,
     bridgeData_2: event.params.bridgeData
-        [2]
+    [2]
     ,
     bridgeData_3: event.params.bridgeData
-        [3]
+    [3]
     ,
     bridgeData_4: event.params.bridgeData
-        [4]
+    [4]
     ,
     bridgeData_5: event.params.bridgeData
-        [5]
+    [5]
     ,
     bridgeData_6: event.params.bridgeData
-        [6]
+    [6]
     ,
     bridgeData_7: event.params.bridgeData
-        [7]
+    [7]
     ,
     bridgeData_8: event.params.bridgeData
-        [8]
+    [8]
     ,
     bridgeData_9: event.params.bridgeData
-        [9]
+    [9]
     ,
   };
 
