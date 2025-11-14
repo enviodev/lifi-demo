@@ -1,0 +1,69 @@
+type LiFiDiamond_BridgeToNonEVMChain {
+  id: ID!
+  transactionId: String!
+  destinationChainId: BigInt!
+  receiver: String!
+}
+
+type LiFiDiamond_BridgeToNonEVMChainBytes32 {
+  id: ID!
+  transactionId: String!
+  destinationChainId: BigInt!
+  receiver: String!
+}
+
+type LiFiDiamond_LiFiGenericSwapCompleted {
+  id: ID!
+  transactionId: String!
+  integrator: String!
+  referrer: String!
+  receiver: String!
+  fromAssetId: String!
+  toAssetId: String!
+  fromAmount: BigInt!
+  toAmount: BigInt!
+}
+
+type LiFiDiamond_LiFiSwappedGeneric {
+  id: ID!
+  transactionId: String!
+  integrator: String!
+  referrer: String!
+  fromAssetId: String!
+  toAssetId: String!
+  fromAmount: BigInt!
+  toAmount: BigInt!
+}
+
+type LiFiDiamond_LiFiTransferCompleted {
+  id: ID!
+  transactionId: String!
+  receivingAssetId: String!
+  receiver: String!
+  amount: BigInt!
+  timestamp: BigInt!
+}
+
+type LiFiDiamond_LiFiTransferRecovered {
+  id: ID!
+  transactionId: String!
+  receivingAssetId: String!
+  receiver: String!
+  amount: BigInt!
+  timestamp: BigInt!
+}
+
+type LiFiDiamond_LiFiTransferStarted {
+  id: ID!
+  bridgeData_0: String!
+  bridgeData_1: String!
+  bridgeData_2: String!
+  bridgeData_3: String!
+  bridgeData_4: String!
+  bridgeData_5: String!
+  bridgeData_6: BigInt!
+  bridgeData_7: BigInt!
+  bridgeData_8: Boolean!
+  bridgeData_9: Boolean!
+}
+
