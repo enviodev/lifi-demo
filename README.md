@@ -1,23 +1,68 @@
-## Envio Indexer
+# LI.FI Demo Indexer
 
-*Please refer to the [documentation website](https://docs.envio.dev) for a thorough guide on all [Envio](https://envio.dev) indexer features*
+A multichain indexer that tracks LI.FI cross-chain transfers, bridges, and swaps via the `LiFiDiamond` contract. Built with [Envio HyperIndex](https://docs.envio.dev).
 
-### Run
+## Chains (19)
+
+| Chain | ID |
+|---|---|
+| Ethereum | 1 |
+| Optimism | 10 |
+| BSC | 56 |
+| Gnosis | 100 |
+| Unichain | 130 |
+| Polygon | 137 |
+| Sonic | 146 |
+| World Chain | 480 |
+| HyperEVM | 999 |
+| Lisk | 1135 |
+| Soneium | 1868 |
+| Mantle | 5000 |
+| Base | 8453 |
+| Arbitrum | 42161 |
+| Celo | 42220 |
+| Avalanche | 43114 |
+| Berachain | 80094 |
+| Plume | 98866 |
+| Scroll | 534352 |
+
+## What it indexes
+
+`LiFiDiamond` events:
+
+- `LiFiTransferStarted`: a cross-chain transfer is initiated
+- `LiFiTransferCompleted`: a cross-chain transfer completes
+- `LiFiTransferRecovered`: a transfer is recovered after failure
+- `LiFiSwappedGeneric` / `LiFiGenericSwapCompleted`: same-chain swaps
+- `BridgeToNonEVMChain` / `BridgeToNonEVMChainBytes32`: bridges to non-EVM destinations
+
+## Schema
+
+`NetworkData` plus per-event entities (`LiFiDiamond_LiFiTransferStarted`, `LiFiDiamond_LiFiTransferCompleted`, `LiFiDiamond_LiFiTransferRecovered`, `LiFiDiamond_LiFiSwappedGeneric`, `LiFiDiamond_LiFiGenericSwapCompleted`, `LiFiDiamond_BridgeToNonEVMChain`, `LiFiDiamond_BridgeToNonEVMChainBytes32`).
+
+## Run locally
 
 ```bash
+pnpm install
 pnpm dev
 ```
 
-Visit http://localhost:8080 to see the GraphQL Playground, local password is `testing`.
+GraphQL playground at [http://localhost:8080](http://localhost:8080) (local password: `testing`).
 
-### Generate files from `config.yaml` or `schema.graphql`
+## Generate from `config.yaml` or `schema.graphql`
 
 ```bash
 pnpm codegen
 ```
 
-### Pre-requisites
+## Pre-requisites
 
 - [Node.js (use v18 or newer)](https://nodejs.org/en/download/current)
-- [pnpm (use v8 or newer)](https://pnpm.io/installation)
-- [Docker desktop](https://www.docker.com/products/docker-desktop/)
+- [pnpm](https://pnpm.io/installation)
+- [Docker](https://www.docker.com/products/docker-desktop/) or [Podman](https://podman.io/)
+
+## Resources
+
+- [Envio docs](https://docs.envio.dev)
+- [HyperIndex overview](https://docs.envio.dev/docs/HyperIndex/overview)
+- [Discord](https://discord.gg/envio)
