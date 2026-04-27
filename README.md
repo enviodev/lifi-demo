@@ -13,8 +13,8 @@ A multichain indexer that tracks LI.FI cross-chain transfers, bridges, and swaps
 | Unichain | 130 |
 | Polygon | 137 |
 | Sonic | 146 |
-| World Chain | 480 |
-| HyperEVM | 999 |
+| Worldchain | 480 |
+| Hyperliquid | 999 |
 | Lisk | 1135 |
 | Soneium | 1868 |
 | Mantle | 5000 |
