@@ -1,44 +1,38 @@
-# LI.FI Demo Indexer
+# LiFi Demo Indexer
 
-A multichain indexer that tracks LI.FI cross-chain transfers, bridges, and swaps via the `LiFiDiamond` contract. Built with [Envio HyperIndex](https://docs.envio.dev).
+Envio HyperIndex indexer for the `LiFiDiamond` contract across 19 chains.
 
-## Chains (19)
+## Chains
 
-| Chain | ID |
+| Network | Chain ID |
 |---|---|
-| Ethereum | 1 |
-| Optimism | 10 |
-| BSC | 56 |
-| Gnosis | 100 |
-| Unichain | 130 |
+| Ethereum Mainnet | 1 |
 | Polygon | 137 |
-| Sonic | 146 |
-| Worldchain | 480 |
-| Hyperliquid | 999 |
-| Lisk | 1135 |
-| Soneium | 1868 |
-| Mantle | 5000 |
-| Base | 8453 |
-| Arbitrum | 42161 |
-| Celo | 42220 |
-| Avalanche | 43114 |
-| Berachain | 80094 |
-| Plume | 98866 |
 | Scroll | 534352 |
+| Gnosis | 100 |
+| Avalanche | 43114 |
+| Arbitrum | 42161 |
+| Bsc | 56 |
+| Celo | 42220 |
+| Optimism | 10 |
+| Base | 8453 |
+| Mantle | 5000 |
+| Worldchain | 480 |
+| Lisk | 1135 |
+| Sonic | 146 |
+| Berachain | 80094 |
+| Soneium | 1868 |
+| Unichain | 130 |
+| Hyperliquid | 999 |
+| Plume | 98866 |
 
-## What it indexes
+## Contracts
 
-`LiFiDiamond` events:
+- **`LiFiDiamond`**: `BridgeToNonEVMChain`, `BridgeToNonEVMChainBytes32`, `LiFiGenericSwapCompleted`, `LiFiSwappedGeneric`, `LiFiTransferCompleted`, `LiFiTransferRecovered`, `LiFiTransferStarted`
 
-- `LiFiTransferStarted`: a cross-chain transfer is initiated
-- `LiFiTransferCompleted`: a cross-chain transfer completes
-- `LiFiTransferRecovered`: a transfer is recovered after failure
-- `LiFiSwappedGeneric` / `LiFiGenericSwapCompleted`: same-chain swaps
-- `BridgeToNonEVMChain` / `BridgeToNonEVMChainBytes32`: bridges to non-EVM destinations
+## Schema entities (8)
 
-## Schema
-
-`NetworkData` plus per-event entities (`LiFiDiamond_LiFiTransferStarted`, `LiFiDiamond_LiFiTransferCompleted`, `LiFiDiamond_LiFiTransferRecovered`, `LiFiDiamond_LiFiSwappedGeneric`, `LiFiDiamond_LiFiGenericSwapCompleted`, `LiFiDiamond_BridgeToNonEVMChain`, `LiFiDiamond_BridgeToNonEVMChainBytes32`).
+`NetworkData`, `LiFiDiamond_BridgeToNonEVMChain`, `LiFiDiamond_BridgeToNonEVMChainBytes32`, `LiFiDiamond_LiFiGenericSwapCompleted`, `LiFiDiamond_LiFiSwappedGeneric`, `LiFiDiamond_LiFiTransferCompleted`, `LiFiDiamond_LiFiTransferRecovered`, `LiFiDiamond_LiFiTransferStarted`
 
 ## Run locally
 
@@ -57,7 +51,7 @@ pnpm codegen
 
 ## Pre-requisites
 
-- [Node.js (use v18 or newer)](https://nodejs.org/en/download/current)
+- [Node.js v22+ (v24 recommended)](https://nodejs.org/en/download/current)
 - [pnpm](https://pnpm.io/installation)
 - [Docker](https://www.docker.com/products/docker-desktop/) or [Podman](https://podman.io/)
 
