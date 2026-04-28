@@ -1,23 +1,62 @@
-## Envio Indexer
+# LiFi Demo Indexer
 
-*Please refer to the [documentation website](https://docs.envio.dev) for a thorough guide on all [Envio](https://envio.dev) indexer features*
+Envio HyperIndex indexer for the `LiFiDiamond` contract across 19 chains.
 
-### Run
+## Chains
+
+| Network | Chain ID |
+|---|---|
+| Ethereum Mainnet | 1 |
+| Polygon | 137 |
+| Scroll | 534352 |
+| Gnosis | 100 |
+| Avalanche | 43114 |
+| Arbitrum | 42161 |
+| Bsc | 56 |
+| Celo | 42220 |
+| Optimism | 10 |
+| Base | 8453 |
+| Mantle | 5000 |
+| Worldchain | 480 |
+| Lisk | 1135 |
+| Sonic | 146 |
+| Berachain | 80094 |
+| Soneium | 1868 |
+| Unichain | 130 |
+| Hyperliquid | 999 |
+| Plume | 98866 |
+
+## Contracts
+
+- **`LiFiDiamond`**: `BridgeToNonEVMChain`, `BridgeToNonEVMChainBytes32`, `LiFiGenericSwapCompleted`, `LiFiSwappedGeneric`, `LiFiTransferCompleted`, `LiFiTransferRecovered`, `LiFiTransferStarted`
+
+## Schema entities (8)
+
+`NetworkData`, `LiFiDiamond_BridgeToNonEVMChain`, `LiFiDiamond_BridgeToNonEVMChainBytes32`, `LiFiDiamond_LiFiGenericSwapCompleted`, `LiFiDiamond_LiFiSwappedGeneric`, `LiFiDiamond_LiFiTransferCompleted`, `LiFiDiamond_LiFiTransferRecovered`, `LiFiDiamond_LiFiTransferStarted`
+
+## Run locally
 
 ```bash
+pnpm install
 pnpm dev
 ```
 
-Visit http://localhost:8080 to see the GraphQL Playground, local password is `testing`.
+GraphQL playground at [http://localhost:8080](http://localhost:8080) (local password: `testing`).
 
-### Generate files from `config.yaml` or `schema.graphql`
+## Generate from `config.yaml` or `schema.graphql`
 
 ```bash
 pnpm codegen
 ```
 
-### Pre-requisites
+## Pre-requisites
 
-- [Node.js (use v18 or newer)](https://nodejs.org/en/download/current)
-- [pnpm (use v8 or newer)](https://pnpm.io/installation)
-- [Docker desktop](https://www.docker.com/products/docker-desktop/)
+- [Node.js v22+ (v24 recommended)](https://nodejs.org/en/download/current)
+- [pnpm](https://pnpm.io/installation)
+- [Docker](https://www.docker.com/products/docker-desktop/) or [Podman](https://podman.io/)
+
+## Resources
+
+- [Envio docs](https://docs.envio.dev)
+- [HyperIndex overview](https://docs.envio.dev/docs/HyperIndex/overview)
+- [Discord](https://discord.gg/envio)
