@@ -1,8 +1,5 @@
 import assert from "assert";
-import { 
-  TestHelpers,
-  LiFiDiamond_BridgeToNonEVMChain
-} from "generated";
+import { TestHelpers, LiFiDiamond_BridgeToNonEVMChain } from "envio";
 const { MockDb, LiFiDiamond } = TestHelpers;
 
 describe("LiFiDiamond contract BridgeToNonEVMChain event tests", () => {

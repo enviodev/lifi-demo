@@ -1,18 +1,11 @@
 /*
  * Please refer to https://docs.envio.dev for a thorough guide on all Envio indexer features
  */
-import {
-  LiFiDiamond,
-  LiFiDiamond_BridgeToNonEVMChain,
-  LiFiDiamond_BridgeToNonEVMChainBytes32,
-  LiFiDiamond_LiFiGenericSwapCompleted,
-  LiFiDiamond_LiFiSwappedGeneric,
-  LiFiDiamond_LiFiTransferCompleted,
-  LiFiDiamond_LiFiTransferRecovered,
-  LiFiDiamond_LiFiTransferStarted,
-} from "generated";
+import { indexer, LiFiDiamond_BridgeToNonEVMChain, LiFiDiamond_BridgeToNonEVMChainBytes32, LiFiDiamond_LiFiGenericSwapCompleted, LiFiDiamond_LiFiSwappedGeneric, LiFiDiamond_LiFiTransferCompleted, LiFiDiamond_LiFiTransferRecovered, LiFiDiamond_LiFiTransferStarted } from "envio";
 
-LiFiDiamond.BridgeToNonEVMChain.handler(async ({ event, context }) => {
+indexer.onEvent(
+  { contract: "LiFiDiamond", event: "BridgeToNonEVMChain" },
+  async ({ event, context }) => {
   const entity: LiFiDiamond_BridgeToNonEVMChain = {
     id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
     transactionId: event.params.transactionId,
@@ -30,9 +23,12 @@ LiFiDiamond.BridgeToNonEVMChain.handler(async ({ event, context }) => {
     id: event.chainId.toString(),
     totalEvents: BigInt(currentEventCount),
   });
-});
+}
+);
 
-LiFiDiamond.BridgeToNonEVMChainBytes32.handler(async ({ event, context }) => {
+indexer.onEvent(
+  { contract: "LiFiDiamond", event: "BridgeToNonEVMChainBytes32" },
+  async ({ event, context }) => {
   const entity: LiFiDiamond_BridgeToNonEVMChainBytes32 = {
     id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
     transactionId: event.params.transactionId,
@@ -41,9 +37,12 @@ LiFiDiamond.BridgeToNonEVMChainBytes32.handler(async ({ event, context }) => {
   };
 
   context.LiFiDiamond_BridgeToNonEVMChainBytes32.set(entity);
-});
+}
+);
 
-LiFiDiamond.LiFiGenericSwapCompleted.handler(async ({ event, context }) => {
+indexer.onEvent(
+  { contract: "LiFiDiamond", event: "LiFiGenericSwapCompleted" },
+  async ({ event, context }) => {
   const entity: LiFiDiamond_LiFiGenericSwapCompleted = {
     id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
     transactionId: event.params.transactionId,
@@ -57,9 +56,12 @@ LiFiDiamond.LiFiGenericSwapCompleted.handler(async ({ event, context }) => {
   };
 
   context.LiFiDiamond_LiFiGenericSwapCompleted.set(entity);
-});
+}
+);
 
-LiFiDiamond.LiFiSwappedGeneric.handler(async ({ event, context }) => {
+indexer.onEvent(
+  { contract: "LiFiDiamond", event: "LiFiSwappedGeneric" },
+  async ({ event, context }) => {
   const entity: LiFiDiamond_LiFiSwappedGeneric = {
     id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
     transactionId: event.params.transactionId,
@@ -72,9 +74,12 @@ LiFiDiamond.LiFiSwappedGeneric.handler(async ({ event, context }) => {
   };
 
   context.LiFiDiamond_LiFiSwappedGeneric.set(entity);
-});
+}
+);
 
-LiFiDiamond.LiFiTransferCompleted.handler(async ({ event, context }) => {
+indexer.onEvent(
+  { contract: "LiFiDiamond", event: "LiFiTransferCompleted" },
+  async ({ event, context }) => {
   const entity: LiFiDiamond_LiFiTransferCompleted = {
     id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
     transactionId: event.params.transactionId,
@@ -85,9 +90,12 @@ LiFiDiamond.LiFiTransferCompleted.handler(async ({ event, context }) => {
   };
 
   context.LiFiDiamond_LiFiTransferCompleted.set(entity);
-});
+}
+);
 
-LiFiDiamond.LiFiTransferRecovered.handler(async ({ event, context }) => {
+indexer.onEvent(
+  { contract: "LiFiDiamond", event: "LiFiTransferRecovered" },
+  async ({ event, context }) => {
   const entity: LiFiDiamond_LiFiTransferRecovered = {
     id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
     transactionId: event.params.transactionId,
@@ -98,9 +106,12 @@ LiFiDiamond.LiFiTransferRecovered.handler(async ({ event, context }) => {
   };
 
   context.LiFiDiamond_LiFiTransferRecovered.set(entity);
-});
+}
+);
 
-LiFiDiamond.LiFiTransferStarted.handler(async ({ event, context }) => {
+indexer.onEvent(
+  { contract: "LiFiDiamond", event: "LiFiTransferStarted" },
+  async ({ event, context }) => {
   const entity: LiFiDiamond_LiFiTransferStarted = {
     id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
     bridgeData_0: event.params.bridgeData
@@ -136,4 +147,5 @@ LiFiDiamond.LiFiTransferStarted.handler(async ({ event, context }) => {
   };
 
   context.LiFiDiamond_LiFiTransferStarted.set(entity);
-});
+}
+);

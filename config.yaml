@@ -11,7 +11,7 @@ contracts:
       - event: LiFiTransferCompleted(bytes32 indexed transactionId, address receivingAssetId, address receiver, uint256 amount, uint256 timestamp)
       - event: LiFiTransferRecovered(bytes32 indexed transactionId, address receivingAssetId, address receiver, uint256 amount, uint256 timestamp)
       - event: LiFiTransferStarted((bytes32,string,string,address,address,address,uint256,uint256,bool,bool) bridgeData)
-networks:
+chains:
   - id: 1 # ethereum
     start_block: 0
     contracts:
@@ -152,5 +152,3 @@ networks:
         address:
           - 0x6f5C8Bb0C5Fe4ECeAC40EE1C238EaB6bbb29761c
           - 0x6EC18Cc9A67c37A792a5BdA8530A7824e6ab80e9
-unordered_multichain_mode: true
-preload_handlers: true
